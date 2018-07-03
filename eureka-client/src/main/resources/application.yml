@@ -1,0 +1,17 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: eureka-client
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/,http://localhost:8763/eureka/
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+  instance:
+    hostname: 127.0.0.1:eureka-client
+
+
+
+
