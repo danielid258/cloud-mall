@@ -5,9 +5,9 @@ spring:
     name: order-service
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.41.6:3306/test?generateSimpleParameterMetadata=true&useUnicode=true&characterEncoding=utf8
-    username: oraupdate
-    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/test?generateSimpleParameterMetadata=true&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 111
   jpa:
     hibernate:
       ddl-auto: update
@@ -16,9 +16,15 @@ eureka:
   client:
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
   instance:
-    hostname: 127.0.0.1:order-service
+    hostname: 127.0.0.1
+
+#Load balancing strategy
+PRODUCT-SERVICE:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
 
 com:
   daniel:

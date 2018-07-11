@@ -70,7 +70,7 @@ public class ProductController {
      * @param productIdList
      * @return
      */
-    @PostMapping("/list/order")
+    @PostMapping("/listForOrder")
     public List<CommonProduct> listForOrder(@RequestBody List<String> productIdList) {
         return productService.findList(productIdList);
     }
