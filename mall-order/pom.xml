@@ -25,6 +25,7 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <order-common.version>1.0-SNAPSHOT</order-common.version>
+        <product-service.version>1.0-SNAPSHOT</product-service.version>
     </properties>
 
     <dependencyManagement>
@@ -36,6 +37,14 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- dependency: product-service -->
+            <dependency>
+                <groupId>com.daniel</groupId>
+                <artifactId>product-service</artifactId>
+                <version>${product-service.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.daniel</groupId>
                 <artifactId>order-common</artifactId>
