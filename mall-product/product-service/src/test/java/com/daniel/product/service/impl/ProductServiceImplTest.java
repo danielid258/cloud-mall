@@ -2,7 +2,7 @@ package com.daniel.product.service.impl;
 
 import com.daniel.product.ProductServiceApplicationTests;
 import com.daniel.product.common.model.CommonProduct;
-import com.daniel.product.common.model.CommonProductStock;
+import com.daniel.product.common.model.ProductStockGeneric;
 import com.daniel.product.model.Product;
 import com.daniel.product.service.ProductService;
 import org.junit.Assert;
@@ -33,7 +33,7 @@ public class ProductServiceImplTest extends ProductServiceApplicationTests{
 
     @Test
     public void decreaseStock() throws Exception {
-        CommonProductStock decreaseStockInput = new CommonProductStock("157875196366160022", 2);
+        ProductStockGeneric decreaseStockInput = new ProductStockGeneric("164103465734242707", 880);
         productService.decreaseStock(Arrays.asList(decreaseStockInput));
     }
 

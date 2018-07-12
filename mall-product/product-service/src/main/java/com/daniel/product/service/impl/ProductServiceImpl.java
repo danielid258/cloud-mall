@@ -1,7 +1,7 @@
 package com.daniel.product.service.impl;
 
 import com.daniel.product.common.model.CommonProduct;
-import com.daniel.product.common.model.CommonProductStock;
+import com.daniel.product.common.model.ProductStockGeneric;
 import com.daniel.product.enums.ProductStatusEnum;
 import com.daniel.product.enums.ResultEnum;
 import com.daniel.product.exception.ProductException;
@@ -47,7 +47,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void decreaseStock(List<CommonProductStock> productStocks) {
+    public void decreaseStock(List<ProductStockGeneric> productStocks) {
         List<Product> productList = decreaseStockProcess(productStocks);
 
         //减少库存事务执行成功 发送mq消息
@@ -67,9 +67,9 @@ public class ProductServiceImpl implements ProductService {
      * @return
      */
     @Transactional
-    private List<Product> decreaseStockProcess(List<CommonProductStock> productStocks) {
+    private List<Product> decreaseStockProcess(List<ProductStockGeneric> productStocks) {
         List<Product> productList = new ArrayList<>();
-        for (CommonProductStock productStock : productStocks) {
+        for (ProductStockGeneric productStock : productStocks) {
             Optional<Product> productOptional = productRepository.findById(productStock.getProductId());
             //判断商品是否存在
             if (!productOptional.isPresent())

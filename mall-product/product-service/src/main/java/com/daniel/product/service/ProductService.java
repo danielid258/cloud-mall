@@ -1,7 +1,7 @@
 package com.daniel.product.service;
 
 import com.daniel.product.common.model.CommonProduct;
-import com.daniel.product.common.model.CommonProductStock;
+import com.daniel.product.common.model.ProductStockGeneric;
 import com.daniel.product.model.Product;
 
 import java.util.List;
@@ -28,5 +28,5 @@ public interface ProductService {
      *
      * @param decreaseStockInputList
      */
-    void decreaseStock(List<CommonProductStock> decreaseStockInputList);
+    void decreaseStock(List<ProductStockGeneric> decreaseStockInputList);
 }

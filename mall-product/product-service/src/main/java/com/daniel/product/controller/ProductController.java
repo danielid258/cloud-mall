@@ -1,7 +1,7 @@
 package com.daniel.product.controller;
 
 import com.daniel.product.common.model.CommonProduct;
-import com.daniel.product.common.model.CommonProductStock;
+import com.daniel.product.common.model.ProductStockGeneric;
 import com.daniel.product.model.Product;
 import com.daniel.product.model.ProductCategory;
 import com.daniel.product.service.ProductCategoryService;
@@ -76,7 +76,7 @@ public class ProductController {
     }
 
     @PostMapping("/stock/decrease")
-    public void decreaseStock(@RequestBody List<CommonProductStock> productStocks) {
+    public void decreaseStock(@RequestBody List<ProductStockGeneric> productStocks) {
         productService.decreaseStock(productStocks);
     }
 }

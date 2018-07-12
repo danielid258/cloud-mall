@@ -96,7 +96,7 @@ public class RemoteCallController {
      */
     @GetMapping("/product/list")
     public String productList() {
-        List<CommonProduct> list = productApi.listForOrder(Arrays.asList("", ""));
+        List<CommonProduct> list = productApi.listForOrder(Arrays.asList("157875196366160022", "157875227953464068"));
         log.info("response data:{}", list);
         return "OK";
     }

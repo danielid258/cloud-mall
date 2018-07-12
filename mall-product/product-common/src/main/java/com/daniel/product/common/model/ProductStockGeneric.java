@@ -6,7 +6,7 @@ import lombok.Data;
  * Daniel on 2018/7/2.
  */
 @Data
-public class CommonProductStock {
+public class ProductStockGeneric {
     /**
      * 商品ID
      */
@@ -17,10 +17,10 @@ public class CommonProductStock {
      */
     private Integer productQuantity;
 
-    public CommonProductStock() {
+    public ProductStockGeneric() {
     }
 
-    public CommonProductStock(String productId, Integer productQuantity) {
+    public ProductStockGeneric(String productId, Integer productQuantity) {
         this.productId = productId;
         this.productQuantity = productQuantity;
     }

@@ -1,7 +1,7 @@
 package com.daniel.order.remote;
 
 import com.daniel.product.common.model.CommonProduct;
-import com.daniel.product.common.model.CommonProductStock;
+import com.daniel.product.common.model.ProductStockGeneric;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,5 +23,5 @@ public interface ProductApi {
     List<CommonProduct> listForOrder(@RequestBody List<String> productIdList);
 
     @PostMapping("/product/decreaseStock")
-    void decreaseStock(@RequestBody List<CommonProductStock> decreaseStockInputList);
+    void decreaseStock(@RequestBody List<ProductStockGeneric> decreaseStockInputList);
 }
